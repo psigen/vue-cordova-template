@@ -7,12 +7,19 @@
 ``` bash
 # install dependencies
 npm install
+cordova platform add android
 
 # serve with hot reload at localhost:8080
 npm run dev
 
+# build for android & run
+npm run android
+
 # build for production with minification
 npm run build
+
+# build for hybrid
+npm run build:hybrid
 {{#unit}}
 
 # run unit tests
