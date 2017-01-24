@@ -9,7 +9,22 @@ config.build.assetsPublicPath = ''
 var ora = require('ora')
 var webpack = require('webpack')
 var webpackConfig = require('./webpack.prod.conf')
-var HtmlAddScript = require('../plugins/webpack-plugin-add-script')
+
+function HtmlAddScript (options) {
+  this.options = options
+}
+
+HtmlAddScript.prototype.apply = function(compiler) {
+  var paths = this.options.paths
+  compiler.plugin('compilation', function(compilation, options) {
+    compilation.plugin('html-webpack-plugin-before-html-processing', function(htmlPluginData, callback) {
+      for (var i = paths.length - 1; i >= 0; i--) {
+        htmlPluginData.assets.js.unshift(paths[i])
+      }
+      callback(null, htmlPluginData)
+    })
+  })
+}
 
 webpackConfig.plugins.push(new HtmlAddScript({
   paths: ['cordova.js']
