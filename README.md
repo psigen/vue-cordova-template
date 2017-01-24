@@ -24,6 +24,7 @@ $ cd vue-cordova
 $ npm install
 $ cordova platform add android
 $ npm run dev
+$ npm run android
 ```
 
 ## What's Included
@@ -57,3 +58,7 @@ $ npm run dev
   - Works with one command out of the box:
     - Selenium and chromedriver dependencies automatically handled.
     - Automatically spawns the Selenium server.
+
+## Tips
+
+- Need to install JDK and Android SDK before use Cordova, using `cordova requirements` test your environment configuration.
