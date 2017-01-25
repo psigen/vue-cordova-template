@@ -62,3 +62,4 @@ $ npm run android
 ## Tips
 
 - Need to install JDK and Android SDK before use Cordova, using `cordova requirements` test your environment configuration.
+- [Better way](http://quasar-framework.org/)
