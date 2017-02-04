@@ -41,6 +41,7 @@ $ npm run android
   - HTML minified with [html-minifier](https://github.com/kangax/html-minifier).
   - CSS across all components extracted into a single file and minified with [cssnano](https://github.com/ben-eb/cssnano).
   - All static assets compiled with version hashes for efficient long-term caching, and a production `index.html` is auto-generated with proper URLs to these generated assets.
+  - Use `npm run build --report`to build with bundle size analytics.
 
 - `npm run build:hybrid`: Production ready build for cordova.
 
