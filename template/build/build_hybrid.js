@@ -8,24 +8,9 @@ var path = require('path')
 var chalk = require('chalk')
 var shell = require('shelljs')
 var webpack = require('webpack')
+var HtmlAddScript = require('./plugins/html-add-script')
 var config = require('../config')
 var webpackConfig = require('./webpack.prod.conf')
-
-function HtmlAddScript (options) {
-  this.options = options
-}
-
-HtmlAddScript.prototype.apply = function(compiler) {
-  var paths = this.options.paths
-  compiler.plugin('compilation', function(compilation, options) {
-    compilation.plugin('html-webpack-plugin-before-html-processing', function(htmlPluginData, callback) {
-      for (var i = paths.length - 1; i >= 0; i--) {
-        htmlPluginData.assets.js.unshift(paths[i])
-      }
-      callback(null, htmlPluginData)
-    })
-  })
-}
 
 config.build.assetsPublicPath = ''
 webpackConfig.plugins.push(new HtmlAddScript({
