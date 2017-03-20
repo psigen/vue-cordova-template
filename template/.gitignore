@@ -1,6 +1,6 @@
 .DS_Store
 node_modules/
-dist/
+www/
 npm-debug.log
 {{#unit}}
 test/unit/coverage
@@ -9,3 +9,11 @@ test/unit/coverage
 test/e2e/reports
 selenium-debug.log
 {{/e2e}}
+
+# Apache Cordova generated files and directories
+bin/*
+!/plugins
+!/plugins/android.json
+!/plugins/fetch.json
+plugins/*
+platforms/*
